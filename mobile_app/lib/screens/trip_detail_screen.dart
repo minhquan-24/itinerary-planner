@@ -252,21 +252,16 @@ class _TripDetailScreenState extends State<TripDetailScreen> {
                       day.activities.where((a) => a.isCompleted).length;
                   final totalCount = day.activities.length;
 
-                  return Container(
+                  return Card(
+                    elevation: 1,
                     margin:
                         const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.04),
-                          blurRadius: 6,
-                          offset: const Offset(0, 2),
-                        ),
-                      ],
-                      border: Border.all(color: Colors.grey.shade200),
+                      side: BorderSide(color: Colors.grey.shade200),
                     ),
+                    clipBehavior: Clip.antiAlias,
                     child: Theme(
                       data: Theme.of(context)
                           .copyWith(dividerColor: Colors.transparent),
